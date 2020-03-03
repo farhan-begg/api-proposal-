@@ -15,6 +15,7 @@ mongoose.connect('mongodb+srv://Farhan-Begg:' + process.env.MONGO_ATLAS_PW + '@c
 
 
 app.use(morgan('dev'));
+app.use('/uploads/', express.static('uploads'));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
