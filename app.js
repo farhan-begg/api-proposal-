@@ -10,9 +10,8 @@ const userRoutes = require("./api/routes/user");
 
 mongoose.connect(
   "mongodb+srv://Farhan-Begg:" +
-    process.env.MONGO_ATLAS_PW +
-    "@cluster0-p5jdm.mongodb.net/test?retryWrites=true&w=majority",
-  {
+  process.env.MONGO_ATLAS_PW +
+  "@cluster0-p5jdm.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }
