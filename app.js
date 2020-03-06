@@ -8,14 +8,17 @@ const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 const userRoutes = require("./api/routes/user");
 
-mongoose.connect(
-  "mongodb+srv://Farhan-Begg:" +
-  process.env.MONGO_ATLAS_PW +
-  "@cluster0-p5jdm.mongodb.net/test?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
+// mongoose.connect(
+//   "mongodb+srv://Farhan-Begg:" +
+//   process.env.MONGO_ATLAS_PW +
+//   "@cluster0-p5jdm.mongodb.net/test?retryWrites=true&w=majority", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   }
+// );
+
+const mongo_uri = process.env.MONGODB_URI
+mongoose.connect(mongo_uri)
 
 app.use(morgan("dev"));
 app.use("/uploads/", express.static("uploads"));
