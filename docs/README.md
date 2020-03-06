@@ -67,7 +67,7 @@ Send a GET Request on `http://localhost:3000/products/` and all products will be
 
 ## Get a specific Product
 
-Send a GET Request on `http://localhost:3000/products/:enterIdHere` to recieve the Puppy whose ID you specified.
+Send a GET Request on `http://localhost:3000/products/:enterIdHere` to recieve the Product with ID you specified.
 
 ## Create a new Product
 
@@ -78,8 +78,6 @@ name: String,
 price: Number,
 
 ```
-
-The full HTTP request should look something like this:
 
 Great.
 
@@ -119,7 +117,7 @@ Send a GET Request on `http://localhost:3000/orders/` and all products will be r
 
 ## Get a specific Order
 
-Send a GET Request on `http://localhost:3000/orders/:enterIdHere` to recieve the Puppy whose ID you specified.
+Send a GET Request on `http://localhost:3000/orders/:enterIdHere` to recieve the order with ID you specified.
 
 ## Create a new Order
 
@@ -130,10 +128,6 @@ name: String,
 price: Number,
 
 ```
-
-The full HTTP request should look something like this:
-
-Great.
 
 ## Update a Order
 
@@ -154,3 +148,5 @@ Send a DELETE request to `http://localhost:3000/orders/:enterIdHere` and refer t
 ```js
 id: String;
 ```
+
+Thank you

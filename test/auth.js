@@ -1,16 +1,16 @@
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const server = require('../server')
+const app = require('../app')
 const should = chai.should()
 chai.use(chaiHttp)
 
-const agent = chai.request.agent(server);
+const agent = chai.request.agent(app);
 const User = require('../api/models/user');
 
 describe("User", function () {
 
     it("should not be able to login if they have not registered", function (done) {
-        agent.post("user/login", {
+        agent.post("/user/login", {
             email: "test@test.com",
             password: "test"
         }).end(function (err, res) {
@@ -25,7 +25,7 @@ describe("User", function () {
             username: "testone"
         }, function () {
             agent
-                .post('/sign-up')
+                .post('/user/signup')
                 .send({
                     username: "testone",
                     password: "password"
@@ -42,7 +42,7 @@ describe("User", function () {
     //login
     it('user should be able to login successfully', function (done) {
         agent
-            .post('/login')
+            .post('/user/login')
             .send({
                 username: "testone",
                 password: "password"
