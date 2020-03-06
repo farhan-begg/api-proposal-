@@ -4,7 +4,7 @@
 
 This API allows authenticated users to post their products online for other users to search and find products of needs. This app is meant for users to store any item inside a database
 
-## Intallation
+## Installation
 
 To install Product API on your local machine, clone the repo, open your terminal, navigate to the directory you just created, and do the following:
 
@@ -19,6 +19,47 @@ npm start
 ```
 
 Great
+
+# Authentication
+
+## Register an account
+
+All you'll have to do next is send a POST request to `http://localhost:3000/user/signup`
+
+Fist set the header to Key: Content-Type and value: application/json
+Make sure your Body is JSON Type and selected raw
+
+```js
+email: String,
+password: Password
+```
+
+Then we will take care of the rest. This will also automatically log you in.
+
+## Log in
+
+In order to log in, send a POST request to `http://localhost:3000/user/login`
+
+Use the following headers with the correct data types:
+
+```js
+email: String,
+password: Password
+```
+
+You should now be authenticated. You can check with the route below.
+
+## Log out
+
+The system will log you out in a hour
+
+## Quick Tip
+
+Before grabbing data from the API, all routes are authorized, except for get all proudcts request. In order to have access to all routes, when you login copy the token key:
+
+Go to Headers For Key: enter Authorization
+For Value: type Bearer and paste your personal token.
+This will check for user Authorization
 
 ## Get all Items
 
@@ -42,7 +83,17 @@ The full HTTP request should look something like this:
 
 Great.
 
-## Update a puppy
+You Can also upload images to your product if you click form-data and enter key and value, for example:
+
+```js
+name: String,
+price: Number,
+productimage: Upload Image
+
+
+```
+
+## Update a Product
 
 Send a PATCH request to `http://localhost:3000/products/` and refer to following for names and values:
 
@@ -62,38 +113,48 @@ Send a DELETE request to `http://localhost:3000/puppies?_method=DELETE` and refe
 id: String;
 ```
 
-Puppy go bye bye.
+bye bye.
 
-# Authentication
+## Get all orders
 
-## Register an account
+Send a GET Request on `http://localhost:3000/orders/` and all products will be returned in the order they were made.
 
-The first thing you'll have to do is solve the Google Captcha. This is in place so we can prevent spammers and bots.
+## Get a specific order
 
-All you'll have to do next is send a POST request to `http://localhost:3000/signup`
+Send a GET Request on `http://localhost:3000/orders/:enterIdHere` to recieve the Puppy whose ID you specified.
 
-Make sure you add the following headers with the correct data type:
+## Create a new Product
 
-```js
-username: String,
-password: Password
-```
-
-Then we will take care of the rest. This will also automatically log you in.
-
-## Log in
-
-In order to log in, send a POST request to `http://localhost:3000/login`
-
-Use the following headers with the correct data types:
+Send a POST request on `http://localhost:3000/orders/` and refer to following for names and values:
 
 ```js
-username: String,
-password: Password
+name: String,
+price: Number,
+
 ```
 
-You should now be authenticated. You can check with the route below.
+The full HTTP request should look something like this:
 
-## Log out
+Great.
 
-The system will log yourself out
+## Update a Product
+
+Send a PATCH request to `http://localhost:3000/orders/:enterIdHere` and refer to following for names and values:
+
+```js
+id: String,
+name: String,
+price: Number,
+```
+
+Perfect.
+
+## Delete a product
+
+Send a DELETE request to `http://localhost:3000/orders/:enterIdHere` and refer to following for names and values:
+
+```js
+id: String;
+```
+
+bye bye.
