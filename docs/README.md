@@ -26,15 +26,15 @@ Great
 
 All you'll have to do next is send a POST request to `http://localhost:3000/user/signup`
 
-Fist set the header to Key: Content-Type and value: application/json
-Make sure your Body is JSON Type and selected raw
+First set the header to Key: Content-Type and value: application/json
+Make sure your Body is JSON Type and selected raw and enter:
 
 ```js
 email: String,
 password: Password
 ```
 
-Then we will take care of the rest. This will also automatically log you in.
+Then we will take care of the rest
 
 ## Log in
 
@@ -51,21 +51,21 @@ You should now be authenticated. You can check with the route below.
 
 ## Log out
 
-The system will log you out in a hour
+The system will log you out with in a hour
 
 ## Quick Tip
 
-Before grabbing data from the API, all routes are authorized, except for get all proudcts request. In order to have access to all routes, when you login copy the token key:
-
-Go to Headers For Key: enter Authorization
+Before grabbing data from the API, all routes are authorized, except for get all proudcts request. In order to have access to all routes:
+Login and copy the token key
+Go to Headers enter Key: Authorization
 For Value: type Bearer and paste your personal token.
 This will check for user Authorization
 
-## Get all Items
+## Get all Products
 
 Send a GET Request on `http://localhost:3000/products/` and all products will be returned in the order they were made.
 
-## Get a specific product
+## Get a specific Product
 
 Send a GET Request on `http://localhost:3000/products/:enterIdHere` to recieve the Puppy whose ID you specified.
 
@@ -113,17 +113,15 @@ Send a DELETE request to `http://localhost:3000/puppies?_method=DELETE` and refe
 id: String;
 ```
 
-bye bye.
-
-## Get all orders
+## Get all Orders
 
 Send a GET Request on `http://localhost:3000/orders/` and all products will be returned in the order they were made.
 
-## Get a specific order
+## Get a specific Order
 
 Send a GET Request on `http://localhost:3000/orders/:enterIdHere` to recieve the Puppy whose ID you specified.
 
-## Create a new Product
+## Create a new Order
 
 Send a POST request on `http://localhost:3000/orders/` and refer to following for names and values:
 
@@ -137,7 +135,7 @@ The full HTTP request should look something like this:
 
 Great.
 
-## Update a Product
+## Update a Order
 
 Send a PATCH request to `http://localhost:3000/orders/:enterIdHere` and refer to following for names and values:
 
@@ -149,12 +147,10 @@ price: Number,
 
 Perfect.
 
-## Delete a product
+## Delete an Order
 
 Send a DELETE request to `http://localhost:3000/orders/:enterIdHere` and refer to following for names and values:
 
 ```js
 id: String;
 ```
-
-bye bye.
