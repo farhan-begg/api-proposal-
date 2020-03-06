@@ -13,12 +13,9 @@ mongoose.connect(
   process.env.MONGO_ATLAS_PW +
   "@cluster0-p5jdm.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
+    useUnifiedTopology: true
   }
 );
-
-app.use(express.static("public"));
 
 app.use(morgan("dev"));
 app.use("/uploads/", express.static("uploads"));
